@@ -1,3 +1,15 @@
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
+
+$spacing-xs: .5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem; 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -19,7 +31,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto, 'Arial, Helvetica, sans-serif');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,3 +42,31 @@ body {
   margin: 0;
 }
 
+// Global classes
+
+.page-content {
+  margin: $spacing-md;
+  @media screen and (min-width: $breakpoint-md) {
+    margin: $spacing-md $spacing-xl;
+  }
+}
+
+.content-thin {
+  max-width: 768px;
+}
+
+.info-section {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  &__badge {
+    margin-right: .5rem;
+    padding: .25rem;
+
+    &:first-child {
+        background: #F4F4F4;
+    }
+  }
+}

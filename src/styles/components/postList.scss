@@ -1,0 +1,10 @@
+.post-list {
+    margin-top: 2rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    @media screen and (min-width: 1200px) {
+        row-gap: 4rem;
+      }
+}
