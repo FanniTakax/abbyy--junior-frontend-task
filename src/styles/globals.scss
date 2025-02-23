@@ -44,6 +44,11 @@ body {
 
 // Global classes
 
+.app-header {
+  padding-block: 1rem;
+  @extend .page-content;
+}
+
 .page-content {
   margin: $spacing-md;
   @media screen and (min-width: $breakpoint-md) {
@@ -52,7 +57,12 @@ body {
 }
 
 .content-thin {
-  max-width: 768px;
+  width: 100%;
+
+  // 768 + 32*2 /2rem*2/ = 832px
+  @media  screen and (min-width: 832px) {
+    width: 768px;
+}
 }
 
 .info-section {

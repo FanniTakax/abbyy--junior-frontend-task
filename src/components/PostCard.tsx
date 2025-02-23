@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import {PostModified} from '@/lib/types'
+import {Post} from '@/lib/types'
 import Image from 'next/image';
 import '@/styles/components/postCard.scss';
 
-export default function PostCard(props: { post: PostModified }) {
+export default function PostCard(props: { post: Post }) {
     const { post } = props;
 
     return (
