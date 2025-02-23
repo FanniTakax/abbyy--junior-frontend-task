@@ -27,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${robotoMono.variable}`}>
+        <h2 className="app-header">My Blog</h2>
         {children}
       </body>
     </html>
