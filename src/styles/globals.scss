@@ -34,6 +34,10 @@ img {
   border-radius: 5px;
 }
 
+a {
+  color: $text-color;
+}
+
 .app-header {
   padding-block: $spacing-sm;
   @extend .page-content;

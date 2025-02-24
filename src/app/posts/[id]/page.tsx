@@ -1,11 +1,13 @@
-import Link from 'next/link'
-import {Post} from '@/lib/types'
+import { Post } from '@/lib/types';
 import Image from 'next/image';
+import Link from 'next/link';
 import '@/styles/pages/postPage.scss';
+import { formatDate } from '@/lib/utils';
 
 export default async function BlogPost({params}: {params: Promise<{id: string}>}) {
     const {id} = await params;
     let post: Post;
+    let dateFormatted = '';
 
     try {
         const res = await fetch(`http://localhost:3001/blogPosts?id=${id}`);
@@ -14,6 +16,9 @@ export default async function BlogPost({params}: {params: Promise<{id: string}>}
         }
         const resJson = await res.json();
         post = resJson[0];
+        dateFormatted = formatDate(post.date)
+
+        //const resUpdateViewCount = '';
     } catch {
         throw new Error('Error')
     }
@@ -30,9 +35,9 @@ export default async function BlogPost({params}: {params: Promise<{id: string}>}
             <div className='info-section'>
               <div>
                 <span className='info-section__badge'>2 min read</span>
-                <span className='info-section__badge'>8 views</span>
+                <span className='info-section__badge'>{post.views + 1} views</span>
               </div>
-              <span>12/3/2024</span> 
+              <span>{dateFormatted}</span> 
             </div>  
           </div>
 
