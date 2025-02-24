@@ -7,7 +7,7 @@ export default function PostsList(props: { posts: Post[] }) {
     return (
       <div className="post-list">
         {
-            posts ? posts.map((post) => {return <PostCard post={post} key={post.id}></PostCard>}) : <p>no posts yet</p>
+          posts.map((post) => {return <PostCard post={post} key={post.id}></PostCard>})
         }
       </div>
     );

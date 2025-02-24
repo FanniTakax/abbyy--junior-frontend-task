@@ -22,8 +22,8 @@ export default async function BlogPost({params}: {params: Promise<{id: string}>}
       <div className='page-content'>
         
         <div className='post'>
-          <div className="post__title content-thin">
-            <Link className='content-thin'href="/">
+          <div className="post__title page-content--thin">
+            <Link className='page-content--thin'href="/">
               <span>All Posts</span>
             </Link>
             <h1>{post.title}</h1>
@@ -39,7 +39,7 @@ export default async function BlogPost({params}: {params: Promise<{id: string}>}
           <div className="post__media">
             <Image src={post.imageLg} alt='post cover image' sizes="100vw" width='1300' height='600' style={{objectFit: 'cover', width: '100%', height: '100%'}}/>
           </div>
-          <div className="post__content content-thin">
+          <div className="post__content page-content--thin">
             <h2 className='post__content-subtitle'>Subtitle</h2>
             <p>{post.body}</p>
             <h3>The following text is added in the BlogPost component for ui purposes to each post</h3>
