@@ -1,32 +1,26 @@
 .page-content {
     margin: $spacing-md;
-  
+
     @include media-md-up {
-      margin: $spacing-md $spacing-xl;
+        margin: $spacing-md $spacing-xl;
     }
-  }
-  
-  .page-content--thin {
+}
+
+.page-content--thin {
     width: 100%;
-  
+
     @include media-md-up {
-      width: 768px;
+        width: 768px;
     }
-  }
-  
-  .info-section {
-    font-size: $font-size-sm;
-    display: flex;
-    justify-content: space-between;
-    margin-block-start: $spacing-sm;
-  
-    &__badge {
-      margin-inline-end: $spacing-xs;
-      padding: calc($spacing-xs / 2);
-  
-      &:first-child {
-          background: $bg-gray;
-      }
+}
+
+.animate-fade-in {
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-  }
-  
+}

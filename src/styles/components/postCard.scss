@@ -8,6 +8,14 @@
         height: auto;
         aspect-ratio: 4/3;
         position: relative;
+
+        img {
+            transition: transform 0.3s ease-in-out;
+            
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
     }
 
     &__content {
@@ -21,6 +29,12 @@
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+        }
+    }
+
+    &__button {
+        a {
+            text-decoration: none;
         }
     }
 }

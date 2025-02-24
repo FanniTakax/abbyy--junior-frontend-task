@@ -7,6 +7,9 @@
     gap: calc($spacing-md * 2);
     padding: $spacing-lg 0;
 
+    @extend .animate-fade-in;
+    animation: fadeIn 1s ease-out forwards;
+
     @include media-lg-up {
         gap: $spacing-xl;
     }
@@ -19,7 +22,6 @@
                 font-size: $font-size-xl;
             }
         }
-
     }
 
     &__media {
@@ -46,5 +48,4 @@
             }
         }
     }
- 
 }

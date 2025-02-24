@@ -1,10 +1,22 @@
 @import '../index.scss';
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .post-list {
     margin-block-start: $spacing-lg;
     display: grid;
     grid-gap: $spacing-lg;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    @extend .animate-fade-in;
+    animation: fadeIn 1s ease-out forwards;
 
     @include media-lg-up {
         row-gap: calc($spacing-lg * 2);

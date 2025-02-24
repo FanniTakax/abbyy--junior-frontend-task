@@ -2,7 +2,22 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, start the json-server:
+
+```bash
+npm run serve-json
+# or
+yarn serve-json
+# or
+pnpm serve-json
+# or
+bun serve-json
+```
+
+The server will run on [http://localhost:3001](http://localhost:3001).
+
+
+Secondn, run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +29,30 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the blog post listing page.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design
 
-## Learn More
+The page was styled based on [this Figma design](https://www.figma.com/design/NUyt1uyTLwjz3WFv77uqOh/Ddsgnr---Blog-%2F-Magazine-Webflow-Website-Template-(Community)?node-id=3-1065&t=2yhUdwF6Rggxt4TK-0).
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## My approach
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Already knowing some React I learned Next.js while working on this task.
 
-## Deploy on Vercel
+I've used server components (except error.tsx), because there's no client interaction, the pages only display data. 
+The blog post list is fetched on the main page. 
+Clicking 'Load more' on any post cards routes to a page with the specific post, where only that post is fetched. 
+The 'All posts' link above the title routes back to the blog list. 
+A loding component is rendered while the pages load.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The page components are in the src/app folder, other components are in src/components, types, data and scripts are in src/lib.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For the blog data a mock back-end is set up with [json-server](https://github.com/typicode/json-server/tree/v0). 
+It serves data from src/lib/data.json to where blog posts were fetched from 
+[JSONplaceholder](https://jsonplaceholder.typicode.com/posts) and modified with the src/lib/data.js script, by pointing the json-server to this file at the first run.
+Images were added from [Lorem Picsum](https://picsum.photos/).
+
+The blog list grid and the pages are fully responsive, using a mobile-first approach.
+Scss files are in the src/styles folder, they are structured considering scalability.
